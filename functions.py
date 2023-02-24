@@ -5,10 +5,11 @@ import numpy as np
 kernal =np.ones((5,5),np.uint8)
 print(kernal)
 
-img=cv2.imread("./yaseen.jpg",0)
+img=cv2.imread("./yaseen.jpg")
 
 # make gray img [1]
-# cv2.imshow("yaseen",img)
+img1=cv2.imread("./yaseen.jpg",0)
+# cv2.imshow("yaseen",img1)
 
 # change img color using cvt [2]
 # imgChange = cv2.cvtColor(img,cv2.COLOR_BGR2GRAY)

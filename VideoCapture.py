@@ -6,6 +6,8 @@ print(img)
 
 while True:
     boool,frame = img.read()
-    cv2.imshow("cap",frame)
+    imgChange = cv2.cvtColor(frame,cv2.COLOR_BGR2GRAY)
+    imgCanny = cv2.Canny(frame, 100, 100)
+    cv2.imshow("cap",imgCanny)
     if cv2.waitKey(1) == ord('q'):
         break
