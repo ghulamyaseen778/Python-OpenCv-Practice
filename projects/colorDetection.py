@@ -31,6 +31,11 @@ while True:
     s_max = cv2.getTrackbarPos("Sat Max","HSV")
     v_max = cv2.getTrackbarPos("Value Max","HSV")
 
+    lower = np.array([h_min,s_min,v_min])
+    upper = np.array([h_max,s_max,v_max])
+    mask = cv2.inRange(imgHsv,lower,upper)
+    result = cv2.bitwise_and(img,img,mask=mask)
+
     cv2.imshow("colorImg",img)
     cv2.imshow("hsvImg",imgHsv)
     if cv2.waitKey(1) & 0xFF == ord('q'):
